@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
@@ -12,7 +13,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan(basePackages = {"model"})  
 @ComponentScan({"services"})
 @ComponentScan({"Repository"})
-@EnableJpaRepositories("Repository") 
+@EnableJpaRepositories("Repository")
+@Configuration
 public class InDataProjectApplication {
 
 	public static void main(String[] args) {
