@@ -31,6 +31,13 @@ public class UserController {
 	public ResponseEntity<User> getUserById(@PathVariable Long id) {
 		return userService.getUserById(id).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
 	}
+	
+	@GetMapping("/byEmail/{email}")
+    public ResponseEntity<User> getUserByEmail(@PathVariable String email) {
+        return userService.getUserByEmail(email)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
 
 	@PostMapping("/add")
 	public ResponseEntity<User> createUser(@RequestBody User user) {

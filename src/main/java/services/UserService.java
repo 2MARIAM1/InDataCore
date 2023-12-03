@@ -48,6 +48,11 @@ public class UserService {
 			return null;
 		}
 	}
+	 public Optional<User> getUserByEmail(String email) {
+	        return userRepository.findAll().stream()
+	                .filter(user -> email.equals(user.getEmail()))
+	                .findFirst();
+	    }
 
 	public void deleteUser(Long id) {
 		userRepository.deleteById(id);
